@@ -1,0 +1,16 @@
+//CSTSYPN1  JOB 6410,SRINI,CLASS=A,MSGCLASS=X,NOTIFY=CSTSYP            
+//ALLOCZ   EXEC PGM=IDCAMS                                             
+//SYSPRINT DD SYSOUT=*                                                 
+//SYSIN    DD  *                                                       
+   DEFINE CLUSTER(NAME(USS.PYTHON.CW40.ZFS) STORCLAS(NONSMS) -         
+   LINEAR CYLINDERS(900 5) SHAREOPTIONS(3) VOLUMES(YSHB0A))            
+/*                                                                     
+//FMTZFS   EXEC   PGM=IOEAGFMT,REGION=0M,                              
+// PARM=('-aggregate USS.PYTHON.CW40.ZFS -compat')                     
+//*STEPLIB  DD DISP=SHR,DSN=IOE.SIOELMOD                               
+//SYSPRINT DD     SYSOUT=*                                             
+//STDOUT   DD     SYSOUT=*                                             
+//STDERR   DD     SYSOUT=*                                             
+//SYSUDUMP DD     SYSOUT=*                                             
+//CEEDUMP  DD     SYSOUT=*                                             
+//*                                                                    
