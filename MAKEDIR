@@ -1,0 +1,12 @@
+//CSTSYPN1  JOB 6410,SRINI,CLASS=A,MSGCLASS=X,NOTIFY=CSTSYP     
+//MAKEDIR  EXEC PGM=IKJEFT01                                    
+//SYSTSPRT DD SYSOUT=*                                          
+//SYSTSIN  DD   *                                               
+  PROFILE WTPMSG MSGID                                          
+  MKDIR '/usr/lpp/IBM/cyp' MODE(7,5,5)                          
+  PROFILE                                                       
+//*                                                             
+//*  MKDIR '/usr' MODE(7,5,5)                                   
+//*  MKDIR '/usr/lpp' MODE(7,5,5)                               
+//*  MKDIR '/usr/lpp/IBM' MODE(7,5,5)                           
+//*                                                             
