@@ -1,0 +1,49 @@
+Install python in zOS
+============================
+download the pax file into local desktop and ftp the file into  
+/usr/lpp/IBM/cyp/v312                                           
+HAMB3C0.nonsmpe.pax.Z                                           
+==========================================================
+unpax the file using below command                           
+pax -p p -r -f /usr/lpp/IBM/cyp/v312/HAMB3C0.nonsmpe.pax.Z   
+============================================================
+update the python directory in /etc/profile                  
+-----------------------------------------------------------  
+export _BPXK_AUTOCVT='ON'                                    
+export _CEE_RUNOPTS='FILETAG(AUTOCVT,AUTOTAG) POSIX(ON)'     
+export _TAG_REDIR_ERR=txt                                    
+export _TAG_REDIR_IN=txt                                     
+export _TAG_REDIR_OUT=txt                                    
+                                                             
+export PATH=/usr/lpp/IBM/cyp/v312/pyz/bin:$PATH              
+export LIBPATH=/usr/lpp/IBM/cyp/v312/pyz/lib:$LIBPATH        
+===================================================================
+check the version of python from omvs     
+python --version                          
+======================================================================
+create requirement.txt file                                             
+/usr/lpp/IBM/cyp/v312/requirements.txt                                  
+mode 777                                                                
+--------------------------------------------                            
+go to below ai tool tool kit site                                       
+https://ibm-z-oss-oda.github.io/python_ai_toolkit_zos/                  
+--------------------------------------------                            
+search for package to be installed and copy the link                    
+in requirements.txt as per below                                        
+--------------------------------------------------------------------------------                 
+--index-url https://downloads.pyaitoolkit.ibm.net:443/repository/python_
+--trusted-host downloads.pyaitoolkit.ibm.net                            
+--require-hashes                                                        
+--only-binary :all:                                                     
+ibm-db==3.2.3 --hash=sha256:0f43da0cda98b7eaec6cad50efb63c26ff25e3984975e89ec43a4c3b466654b 
+===================================================================================================
+Issue command for code conversion in OMVS                              
+iconv -f IBM-1047 -t ISO8859-1 requirements.txt > requirements_new.txt 
+                                                                       
+Install the package using pip command                                  
+pip install --no-deps -r requirements_new.txt                          
+                                                                       
+Issue pip list command to check the packages installed                 
+pip list or pip3 list                                                  
+====================================================================================
+
