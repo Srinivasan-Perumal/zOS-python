@@ -1,0 +1,8 @@
+//CSTSYPN1  JOB 6410,SRINI,CLASS=A,MSGCLASS=X,NOTIFY=CSTSYP      
+//MOUNT    EXEC PGM=IKJEFT01                                     
+//SYSTSPRT DD   SYSOUT=*                                         
+//SYSPRINT DD   SYSOUT=*                                         
+//SYSTSIN  DD   *                                                
+  MOUNT FILESYSTEM('USS.PYTHON.CW40.ZFS') +                      
+     TYPE(ZFS) MODE(RDWR) PARM('AGGRGROW') +                     
+     MOUNTPOINT('/usr/lpp/IBM/cyp')                              
