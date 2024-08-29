@@ -1,0 +1,9 @@
+copy the USS files from one location to another 
+cp -rf /usr/lpp/IBM/cyp/v312/usr/lpp/IBM/cyp/v3r12/ /usr/lpp/IBM/cyp/v312/ 
+r = Recursively copy all files and directories
+f = option can overwrite important files without warning. Be sure that overwriting files is intended
+cp -mprv /usr/lpp/IBM/cyp/v312/usr/lpp/IBM/cyp/v3r12/ /usr/lpp/IBM/cyp/v312/ 
+-m: Preserve mode (permissions) of the files.
+-p: Preserve file attributes (such as timestamps and ownership).
+-r: Copy directories recursively.
+-v: Verbose output, showing files as they are copied.
