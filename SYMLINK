@@ -1,0 +1,2 @@
+Set symlinks for /usr/bin. When using pip, some packages expect Python to be installed into /usr/bin. You can set symlinks by running the following commands:
+ln -sf <install directory>/bin/python3 /usr/bin/python
